@@ -10,3 +10,8 @@ class LoadScreenHomeEvent extends ScreenHomeEvent{
     @override
   List<Object> get props => [];
 }
+
+class fetchSearchList extends ScreenHomeEvent{
+  Data datas;
+  fetchSearchList(this.datas);
+}

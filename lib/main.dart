@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:http/http.dart';
 import 'package:sampleapi/repo/repository.dart';
 import 'package:sampleapi/screen/bloc/screen_home_bloc.dart';
 import 'package:sampleapi/screen/screenHome.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -18,12 +20,15 @@ class MyApp extends StatelessWidget {
       create: (context) => UserRepo(),
       child: MaterialApp(
         title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
         home: BlocProvider(
-          create: (context) => ScreenHomeBloc(RepositoryProvider.of<UserRepo>(context))..add(LoadScreenHomeEvent()),
+          create: (context) =>
+              ScreenHomeBloc(RepositoryProvider.of<UserRepo>(context))
+                ..add(LoadScreenHomeEvent()),
           child: ScreenHome(),
         ),
       ),

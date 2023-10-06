@@ -1,6 +1,6 @@
 part of 'screen_home_bloc.dart';
 
-sealed class ScreenHomeState extends Equatable {
+ class ScreenHomeState extends Equatable {
   const ScreenHomeState();
 
   @override
