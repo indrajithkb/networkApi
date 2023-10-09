@@ -14,7 +14,6 @@ class ScreenOnboard extends StatefulWidget {
 }
 
 class _ScreenOnboardState extends State<ScreenOnboard> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
